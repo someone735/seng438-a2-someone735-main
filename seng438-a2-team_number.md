@@ -5,9 +5,10 @@
 | Group \#:      |     |
 | -------------- | --- |
 | Student Names: |     |
-|                |     |
-|                |     |
-|                |     |
+| John            |   |
+| Mark            |   |
+| Ron             |   |
+| Lana            |       |
 
 # 1 Introduction
 
