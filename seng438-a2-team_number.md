@@ -2,9 +2,9 @@
 
 **Lab. Report \#2 – Requirements-Based Test Generation**
 
-| Group \#:      |   28  |
-| -------------- | --- |
-| Student Names: |     |
+| Group \#:  28        |
+| ----------------- |
+| Student Names:      |
 | John            |   
 | Mark            |   
 | Ron             |   
