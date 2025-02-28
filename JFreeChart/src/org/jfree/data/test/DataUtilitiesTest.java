@@ -22,7 +22,7 @@ public class DataUtilitiesTest {
 				one(values).getValue(0,0);
 				will(returnValue(3.0));
 				one(values).getValue(1,0);
-				will(returnValue(7.0));
+				will(returnValue(-7.0));
 			}
 		});
 		
@@ -30,6 +30,27 @@ public class DataUtilitiesTest {
 		assertEquals(3.0, result, .000000001d);
 
 	}
+	
+	@Test
+	public void negativeValueCalculateRowTotal() {
+		Mockery mockingContext = new Mockery();
+		final Values2D values = mockingContext.mock(Values2D.class);
+		mockingContext.checking(new Expectations() {
+			{
+				one(values).getColumnCount();
+				will(returnValue(2));
+				one(values).getValue(0,0);
+				will(returnValue(3.0));
+				one(values).getValue(1,0);
+				will(returnValue(-7.0));
+			}
+		});
+		
+		double result = DataUtilities.calculateRowTotal(values, 1);
+		assertEquals(-7.0, result, .000000001d);
+
+	}
+	
 	@Test
 	public void calculateRowTotalOf2x2Table() {
 		

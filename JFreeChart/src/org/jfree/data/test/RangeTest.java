@@ -93,11 +93,11 @@ public class RangeTest {
 	
 	@Test 
 	public void combineEqualRanges() {
-		Range exampleRangeOne = new Range(2,9);
-		Range exampleRangeTwo = new Range(2,9);
+		Range exampleRangeOne = new Range(-2,9);
+		Range exampleRangeTwo = new Range(-2,9);
 		Range resultRange = Range.combine(exampleRangeOne, exampleRangeTwo);
 		assertNotNull(resultRange);
-		Range finalRange = new Range(2,9);
+		Range finalRange = new Range(-2,9);
 		assertEquals(finalRange, resultRange);
 	}
 	
