@@ -25,7 +25,7 @@ public class DataUtilitiesTest {
 				will(returnValue(-7.0));
 			}
 		});
-		
+		// calculate the row total of a row containing a positive value, expected: 3.0
 		double result = DataUtilities.calculateRowTotal(values, 0);
 		assertEquals(3.0, result, .000000001d);
 
@@ -45,7 +45,7 @@ public class DataUtilitiesTest {
 				will(returnValue(-7.0));
 			}
 		});
-		
+		// calculate the row total of a row containing a negative value, expected: -7.0
 		double result = DataUtilities.calculateRowTotal(values, 1);
 		assertEquals(-7.0, result, .000000001d);
 
@@ -72,7 +72,7 @@ public class DataUtilitiesTest {
 				will(returnValue(11.0));
 			}
 		});
-		
+		// calculate the row total for the 2nd row, expected value: 18.0
 		double result = DataUtilities.calculateRowTotal(values, 1);
 		assertEquals(18.0, result, .000000001d);
 		
