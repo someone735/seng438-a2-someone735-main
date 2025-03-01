@@ -15,12 +15,11 @@
 Text…
 
 # 2 Detailed description of unit test strategy
-
-// including the input partitions you have designed
+Refer to the [title of the pdf]
 
 # 3 Test cases developed
 
-Text…
+Refer to the [title of the pdf]
 
 // write down the name of the test methods and classes. Organize the based on
 the source code method // they test. identify which tests cover which partitions
