@@ -305,4 +305,208 @@ public class DataUtilitiesTest {
 			assertEquals(0.0 / 0.0, result.getValue(1));
 			assertEquals(0.0 / 0.0, result.getValue(2));
 		}	    
+		/**
+	 * Test for DataUtilities.createNumberArray with valid nonzero values.
+	 * This test verifies that the returned array is non-null, has the expected length,
+	 * and that each element matches the corresponding input value.
+	 */
+	@Test
+	public void createNumberArrayWithValidValues() {
+	    double[] input = {1.5, 2.5, 3.5};
+	    Number[] result = DataUtilities.createNumberArray(input);
+
+	    // Check that the result is not null and has the correct length.
+	    assertNotNull("Result should not be null", result);
+	    assertEquals("Array length should match", input.length, result.length);
+
+	    // Compare each value numerically (with a null-check).
+	    for (int i = 0; i < input.length; i++) {
+	        assertNotNull("Element at index " + i + " should not be null", result[i]);
+	        assertEquals("Mismatch at index " + i, input[i], result[i].doubleValue(), 0.00001);
+	    }
+	}
+
+	/**
+	 * Test for DataUtilities.createNumberArray with an empty input array.
+	 * Verifies that an empty input array returns an empty Number array.
+	 */
+	@Test
+	public void createNumberArrayWithEmptyArray() {
+	    double[] input = {};
+	    Number[] expected = {};
+	    Number[] result = DataUtilities.createNumberArray(input);
+	    assertArrayEquals("Empty arrays should be equal", expected, result);
+	}
+
+	/**
+	 * Test for DataUtilities.createNumberArray with negative numbers.
+	 * This test checks that each negative value is properly converted.
+	 */
+	@Test
+	public void createNumberArrayWithNegativeNumbers() {
+	    double[] input = {-1.2, -2.3, -3.4};
+	    Number[] result = DataUtilities.createNumberArray(input);
+
+	    // Ensure array lengths match.
+	    assertEquals("Array length should match", input.length, result.length);
+
+	    // Compare each element numerically, ensuring no element is null.
+	    for (int i = 0; i < input.length; i++) {
+	        assertNotNull("Element at index " + i + " should not be null", result[i]);
+	        assertEquals("Mismatch at index " + i, input[i], result[i].doubleValue(), 0.00001);
+	    }
+	}
+
+	/**
+	 * Test for DataUtilities.createNumberArray with zero values.
+	 * This test verifies that the returned array for zero values matches the expected values.
+	 */
+	@Test
+	public void createNumberArrayWithZeroValues() {
+	    double[] input = {0.0, 0.0, 0.0};
+	    Number[] result = DataUtilities.createNumberArray(input);
+
+	    assertNotNull("Result should not be null", result);
+
+	    // Define expected output as a Double array.
+	    Double[] expected = {0.0, 0.0, 0.0};
+	    assertArrayEquals("Arrays with zeroes should be equal", expected, result);
+	}
+	/**
+     * Test 5 for createNumberArray: Using assertArrayEquals directly.
+     * Purpose: Verify that the whole returned array exactly matches the expected array.
+     * (This test is concise but may fail if there’s a type mismatch.)
+     */
+    @Test
+    public void createNumberArrayAssertArrayEquals() {
+        double[] input = {3.3, 4.4, 5.5};
+        // Explicitly declare expected as Double[] so that type matches.
+        Double[] expected = {3.3, 4.4, 5.5};
+        Number[] result = DataUtilities.createNumberArray(input);
+        assertArrayEquals("Arrays should be equal", expected, result);
+    }
+
+    /**
+     * Test for DataUtilities.createNumberArray2D with valid values.
+     * This test verifies that a 2D array of doubles is correctly converted to a 2D Number array.
+     */
+    @Test
+    public void createNumberArray2DWithValidValues() {
+        double[][] input = {
+            {1.5, 2.5},
+            {3.5, 4.5}
+        };
+        // Define the expected 2D array. (You might need to use a loop to compare the rows if assertArrayEquals does not handle 2D arrays directly.)
+        Number[][] expected = {
+            {1.5, 2.5},
+            {3.5, 4.5}
+        };
+
+        Number[][] result = DataUtilities.createNumberArray2D(input);
+
+        // Verify that the result is not null.
+        assertNotNull("Result should not be null", result);
+        // Check that the outer array length matches.
+        assertEquals("Outer array length should match", input.length, result.length);
+
+        // Compare each row.
+        for (int i = 0; i < input.length; i++) {
+            // Check that each row is not null and has the correct length.
+            assertNotNull("Row " + i + " should not be null", result[i]);
+            assertEquals("Row length for row " + i + " should match", input[i].length, result[i].length);
+
+            // Compare each element in the row.
+            for (int j = 0; j < input[i].length; j++) {
+                assertNotNull("Element at (" + i + "," + j + ") should not be null", result[i][j]);
+                assertEquals("Mismatch at (" + i + "," + j + ")",
+                             input[i][j], result[i][j].doubleValue(), 0.00001);
+            }
+        }
+    }
+
+    /**
+     * Test for DataUtilities.createNumberArray2D with an empty 2D array.
+     * Verifies that an empty 2D input array returns an empty 2D Number array.
+     */
+    @Test
+    public void createNumberArray2DWithEmptyArray() {
+        double[][] input = {};
+        Number[][] expected = {};
+        Number[][] result = DataUtilities.createNumberArray2D(input);
+        assertArrayEquals("Empty 2D arrays should be equal", expected, result);
+    }
+    /**
+     * Test 3 for createNumberArray2D: 2D array with negative numbers.
+     * Purpose: Check that a 2D array containing negative values is converted correctly.
+     */
+    @Test
+    public void createNumberArray2DNegativeNumbers() {
+        double[][] input = {
+            {-1.1, -2.2},
+            {-3.3, -4.4}
+        };
+        Number[][] result = DataUtilities.createNumberArray2D(input);
+        assertNotNull("Result should not be null", result);
+        assertEquals("Outer array length should match", input.length, result.length);
+        for (int i = 0; i < input.length; i++) {
+            assertNotNull("Row " + i + " should not be null", result[i]);
+            assertEquals("Row " + i + " length should match", input[i].length, result[i].length);
+            for (int j = 0; j < input[i].length; j++) {
+                assertNotNull("Element at (" + i + "," + j + ") should not be null", result[i][j]);
+                assertEquals("Mismatch at (" + i + "," + j + ")",
+                             input[i][j], result[i][j].doubleValue(), 0.00001);
+            }
+        }
+    }
+
+    /**
+     * Test 4 for createNumberArray2D: 2D array with all zero values.
+     * Purpose: Verify that a 2D array of zeros is converted correctly,
+     * with every element equal to 0.0.
+     */
+    @Test
+    public void createNumberArray2DZeroValues() {
+        double[][] input = {
+            {0.0, 0.0},
+            {0.0, 0.0}
+        };
+        Number[][] result = DataUtilities.createNumberArray2D(input);
+        assertNotNull("Result should not be null", result);
+        assertEquals("Outer array length should match", input.length, result.length);
+        for (int i = 0; i < input.length; i++) {
+            assertNotNull("Row " + i + " should not be null", result[i]);
+            assertEquals("Row " + i + " length should match", input[i].length, result[i].length);
+            for (int j = 0; j < input[i].length; j++) {
+                assertNotNull("Element at (" + i + "," + j + ") should not be null", result[i][j]);
+                assertEquals("Mismatch at (" + i + "," + j + ")",
+                             input[i][j], result[i][j].doubleValue(), 0.00001);
+            }
+        }
+    }
+
+    /**
+     * Test 5 for createNumberArray2D: 2D array with mixed values.
+     * Purpose: Verify that a 2D array containing positive, negative, and zero values
+     * is converted correctly into a 2D Number array.
+     */
+    @Test
+    public void createNumberArray2DMixedValues() {
+        double[][] input = {
+            {1.1, 0.0, -1.1},
+            {2.2, -2.2, 0.0}
+        };
+        Number[][] result = DataUtilities.createNumberArray2D(input);
+        assertNotNull("Result should not be null", result);
+        assertEquals("Outer array length should match", input.length, result.length);
+        for (int i = 0; i < input.length; i++) {
+            assertNotNull("Row " + i + " should not be null", result[i]);
+            assertEquals("Row " + i + " length should match", input[i].length, result[i].length);
+            for (int j = 0; j < input[i].length; j++) {
+                assertNotNull("Element at (" + i + "," + j + ") should not be null", result[i][j]);
+                assertEquals("Mismatch at (" + i + "," + j + ")",
+                             input[i][j], result[i][j].doubleValue(), 0.00001);
+            }
+        }
+    }
+
 }
