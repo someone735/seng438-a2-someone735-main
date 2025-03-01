@@ -15,11 +15,12 @@
 This lab introduced us to unit testing using JUnit, we already learned what unit testing was during class and this lab further teaches us how to do it. We learned how to apply techniques such as equivalence classes and boundary value analysis while also using mock objects. Through testing the JFreeChart, we gained experienced on how to do unit testing; designing and executing test cases. This helped us identify defects and understand the role of unit testing in the software field. 
 
 # 2 Detailed description of unit test strategy
-Refer to the [title of the pdf]
+
+Refer to the TestStrategy-TestCases pdf in the repo
 
 # 3 Test cases developed
 
-Refer to the [title of the pdf]
+Refer to the TestStrategy-TestCases pdf in the repo
 
 # 4 How the team work/effort was divided and managed
 
