@@ -33,6 +33,4 @@ Communication and Collaboration – Coordinating effectively as a team, especial
 
 # 6 Comments/feedback on the lab itself
 
-The lab document was easy to follow and understandable to our group, we knew right away what to do and what to execute to complete the lab perfectly. This lab was useful practice as it let our group get an experience on using Jira to track bugs as a collective team. Overall, the lab was pretty nice to start us off and what to expect for future labs coming in this course.
-
-The provided lab documents made the requirements straightforward to follow and complete. The index.html file specificed in the lab markdown file was the most helpful to this project as explained the functions and methods in the most detail. Additionally, the lab was a useful experience that helped strengthen our understand of automated unit testing. Finally, our overall experience of the lab was that it was helpful practice on the material that we have learned and how it is to be applied. 
+The provided lab documents made the requirements straightforward to follow and complete. The index.html file specified in the lab markdown file was the most helpful to this project as it explained the functions and methods in the most detail. Additionally, the lab was a useful experience that helped strengthen our understanding of automated unit testing. Finally, our overall experience of the lab was that it was helpful practice on the material that we have learned and how it is to be applied. 
