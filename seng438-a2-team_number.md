@@ -12,7 +12,7 @@
 
 # 1 Introduction
 
-Text…
+This lab introduced us to unit testing using JUnit, we already learned what unit testing was during class and this lab further teaches us how to do it. We learned how to apply techniques such as equivalence classes and boundary value analysis while also using mock objects. Through testing the JFreeChart, we gained experienced on how to do unit testing; designing and executing test cases. This helped us identify defects and understand the role of unit testing in the software field. 
 
 # 2 Detailed description of unit test strategy
 Refer to the [title of the pdf]
@@ -24,6 +24,11 @@ Refer to the [title of the pdf]
 # 4 How the team work/effort was divided and managed
 
 The project was split equally amongst all team members and each team member individually worked on their section, communicating with other team members for feedback and help.  
+
+Lana - createNumberArray, createNumberArray2D
+Ron - toString, getCumulativePercentages
+Mark - intersects, calculateColumnTotal
+John - combine, constrain, getCentralValue, calculateRowTotal
 
 # 5 Difficulties encountered, challenges overcome, and lessons learned
 
